@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="container">
+  <div class="bg-light p-3 p-sm-5 my-4 rounded">
+    <h1 class="display-4">TODOLIST</h1>
+    <p class="lead">毎日を効率よく過ごすために</p>
+    <hr class="my-4">
+    <p>より大きなコンテナの範囲内でコンテンツに空間をあけるため、文字の体裁と空白ユーティリティクラスを使用している。</p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">もっと学ぼう</a>
+  </div>
+  <h1 class="mt-2">ブランド</h1>
+  <p>ココにサイトの文章が入ります。</p>
+</div>
+{% endblock header%}
+
+{% block content%}
+<div class="container">
+	{% for item in object_list %}
+	<div class="alert alert-{{ item.priority }}" role="alert">
+	  <p>{{ item.title }}</p>
+	  <a href="#" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">編集</a>
+	  <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">削除</a>
+	  <a href="#" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">詳細</a>
+	</div>
+	{% endfor %}
+	{% endblock content%}
+</div>
